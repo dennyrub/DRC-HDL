@@ -35,32 +35,28 @@
         ],
         "semanticTokenTypes": [
             {
-                "id": "portIn",
-                "description": "Входные порты"
+                "id": "portIn"
             },
             {
-                "id": "vhdlSignal",
-                "description": "VHDL Signals"
+                "id": "portOut"
             },
             {
-                "id": "vhdlConstant",
-                "description": "VHDL Constants"
+                "id": "functionName"
             },
             {
-                "id": "portOut",
-                "description": "Выходные порты"
+                "id": "vhdlType"
             },
             {
-                "id": "functionName",
-                "description": "Имена функций"
+                "id": "vhdlVariable"
             },
             {
-                "id": "vhdlVariable",
-                "description": "VHDL Variables"
+                "id": "vhdlSignal"
             },
             {
-                "id": "vhdlType",
-                "description": "Типы данных"
+                "id": "vhdlConstant"
+            },
+            {
+                "id": "fsmState"
             }
         ],
         "configurationDefaults": {
@@ -69,7 +65,19 @@
                     {
                         "scope": "keyword.control.vhdl",
                         "settings": {
-                            "foreground": "#C586C0"
+                            "foreground": "#569CD6"
+                        }
+                    },
+                    {
+                        "scope": "constant.language.vhdl",
+                        "settings": {
+                            "foreground": "#008CFF"
+                        }
+                    },
+                    {
+                        "scope": "entity.other.attribute-name.vhdl",
+                        "settings": {
+                            "foreground": "#CE9178"
                         }
                     },
                     {
@@ -91,10 +99,11 @@
                     "portIn": "#c1c2ff",
                     "portOut": "#ffc1d6",
                     "functionName": "#DCDCAA",
+                    "vhdlType": "#4EC9B0",
                     "vhdlVariable": "#9CDCFE",
                     "vhdlSignal": "#4FC1FF",
-                    "vhdlConstant": "#569CD6",
-                    "vhdlType": "#4EC9B0"
+                    "vhdlConstant": "#008CFF",
+                    "fsmState": "#C586C0"
                 }
             }
         }
