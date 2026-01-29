@@ -1,0 +1,120 @@
+{
+    "name": "drc-hdl-support",
+    "displayName": "DRC-HDL",
+    "description": "DennyRub – is a word about the future...",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.108.1"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [],
+    "main": "./out/extension.js",
+    "contributes": {
+        "languages": [
+            {
+                "id": "vhdl",
+                "aliases": [
+                    "VHDL",
+                    "vhdl"
+                ],
+                "extensions": [
+                    ".vhd",
+                    ".vhdl"
+                ],
+                "configuration": "./language-configuration-vhdl.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "vhdl",
+                "scopeName": "source.vhdl",
+                "path": "./syntaxes/vhdl.tmLanguage.json"
+            }
+        ],
+        "semanticTokenTypes": [
+            {
+                "id": "portIn",
+                "description": "Входные порты"
+            },
+            {
+                "id": "vhdlSignal",
+                "description": "VHDL Signals"
+            },
+            {
+                "id": "vhdlConstant",
+                "description": "VHDL Constants"
+            },
+            {
+                "id": "portOut",
+                "description": "Выходные порты"
+            },
+            {
+                "id": "functionName",
+                "description": "Имена функций"
+            },
+            {
+                "id": "vhdlVariable",
+                "description": "VHDL Variables"
+            },
+            {
+                "id": "vhdlType",
+                "description": "Типы данных"
+            }
+        ],
+        "configurationDefaults": {
+            "editor.tokenColorCustomizations": {
+                "textMateRules": [
+                    {
+                        "scope": "keyword.control.vhdl",
+                        "settings": {
+                            "foreground": "#C586C0"
+                        }
+                    },
+                    {
+                        "scope": "constant.numeric.vhdl",
+                        "settings": {
+                            "foreground": "#B5CEA8"
+                        }
+                    },
+                    {
+                        "scope": "storage.type.vhdl",
+                        "settings": {
+                            "foreground": "#4EC9B0"
+                        }
+                    }
+                ]
+            },
+            "editor.semanticTokenColorCustomizations": {
+                "rules": {
+                    "portIn": "#c1c2ff",
+                    "portOut": "#ffc1d6",
+                    "functionName": "#DCDCAA",
+                    "vhdlVariable": "#9CDCFE",
+                    "vhdlSignal": "#4FC1FF",
+                    "vhdlConstant": "#569CD6",
+                    "vhdlType": "#4EC9B0"
+                }
+            }
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "pretest": "npm run compile && npm run lint",
+        "lint": "eslint src",
+        "test": "vscode-test"
+    },
+    "devDependencies": {
+        "@types/vscode": "^1.108.1",
+        "@types/mocha": "^10.0.10",
+        "@types/node": "22.x",
+        "typescript-eslint": "^8.52.0",
+        "eslint": "^9.39.2",
+        "typescript": "^5.9.3",
+        "@vscode/test-cli": "^0.0.12",
+        "@vscode/test-electron": "^2.5.2"
+    }
+}
