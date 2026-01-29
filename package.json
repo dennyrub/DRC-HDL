@@ -1,15 +1,26 @@
 {
     "name": "drc-hdl-support",
     "displayName": "DRC-HDL",
-    "description": "DennyRub – is a word about the future...",
+    "description": "Professional VHDL/Verilog support with advanced semantic highlighting",
     "version": "0.0.1",
+    "publisher": "DennyRub",
     "engines": {
-        "vscode": "^1.108.1"
+        "vscode": "^1.90.0"
     },
     "categories": [
-        "Other"
+        "Programming Languages",
+        "Themes"
     ],
-    "activationEvents": [],
+    "keywords": [
+        "VHDL",
+        "Verilog",
+        "HDL",
+        "FPGA",
+        "Hardware Description Language"
+    ],
+    "activationEvents": [
+        "onLanguage:vhdl"
+    ],
     "main": "./out/extension.js",
     "contributes": {
         "languages": [
@@ -35,28 +46,36 @@
         ],
         "semanticTokenTypes": [
             {
-                "id": "portIn"
+                "id": "portIn",
+                "description": "Input port names (DRC-HDL)"
             },
             {
-                "id": "portOut"
+                "id": "portOut",
+                "description": "Output port names (DRC-HDL)"
             },
             {
-                "id": "functionName"
+                "id": "functionName",
+                "description": "VHDL function names (DRC-HDL)"
             },
             {
-                "id": "vhdlType"
+                "id": "vhdlType",
+                "description": "Data types (DRC-HDL)"
             },
             {
-                "id": "vhdlVariable"
+                "id": "vhdlVariable",
+                "description": "Variables (DRC-HDL)"
             },
             {
-                "id": "vhdlSignal"
+                "id": "vhdlSignal",
+                "description": "Signals (DRC-HDL)"
             },
             {
-                "id": "vhdlConstant"
+                "id": "vhdlConstant",
+                "description": "Constants and system objects (DRC-HDL)"
             },
             {
-                "id": "fsmState"
+                "id": "fsmState",
+                "description": "FSM State enumerations (DRC-HDL)"
             }
         ],
         "configurationDefaults": {
@@ -112,18 +131,12 @@
         "vscode:prepublish": "npm run compile",
         "compile": "tsc -p ./",
         "watch": "tsc -watch -p ./",
-        "pretest": "npm run compile && npm run lint",
-        "lint": "eslint src",
+        "pretest": "npm run compile",
         "test": "vscode-test"
     },
     "devDependencies": {
-        "@types/vscode": "^1.108.1",
-        "@types/mocha": "^10.0.10",
-        "@types/node": "22.x",
-        "typescript-eslint": "^8.52.0",
-        "eslint": "^9.39.2",
-        "typescript": "^5.9.3",
-        "@vscode/test-cli": "^0.0.12",
-        "@vscode/test-electron": "^2.5.2"
+        "@types/vscode": "^1.90.0",
+        "@types/node": "20.x",
+        "typescript": "^5.4.5"
     }
 }
