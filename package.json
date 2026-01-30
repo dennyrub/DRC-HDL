@@ -1,142 +1,142 @@
 {
-    "name": "drc-hdl-support",
-    "displayName": "DRC-HDL",
-    "description": "Professional VHDL/Verilog support with advanced semantic highlighting",
-    "version": "0.0.2",
-    "publisher": "DennyRub",
-    "engines": {
-        "vscode": "^1.90.0"
-    },
-    "categories": [
-        "Programming Languages",
-        "Themes"
-    ],
-    "keywords": [
-        "VHDL",
-        "Verilog",
-        "HDL",
-        "FPGA",
-        "Hardware Description Language"
-    ],
-    "activationEvents": [
-        "onLanguage:vhdl"
-    ],
-    "main": "./out/extension.js",
-    "contributes": {
-        "languages": [
-            {
-                "id": "vhdl",
-                "aliases": [
-                    "VHDL",
-                    "vhdl"
-                ],
-                "extensions": [
-                    ".vhd",
-                    ".vhdl"
-                ],
-                "configuration": "./language-configuration-vhdl.json"
-            }
-        ],
-        "grammars": [
-            {
-                "language": "vhdl",
-                "scopeName": "source.vhdl",
-                "path": "./syntaxes/vhdl.tmLanguage.json"
-            }
-        ],
-        "semanticTokenTypes": [
-            {
-                "id": "portIn",
-                "description": "Input port names (DRC-HDL)"
-            },
-            {
-                "id": "portOut",
-                "description": "Output port names (DRC-HDL)"
-            },
-            {
-                "id": "functionName",
-                "description": "VHDL function names (DRC-HDL)"
-            },
-            {
-                "id": "vhdlType",
-                "description": "Data types (DRC-HDL)"
-            },
-            {
-                "id": "vhdlVariable",
-                "description": "Variables (DRC-HDL)"
-            },
-            {
-                "id": "vhdlSignal",
-                "description": "Signals (DRC-HDL)"
-            },
-            {
-                "id": "vhdlConstant",
-                "description": "Constants and system objects (DRC-HDL)"
-            },
-            {
-                "id": "fsmState",
-                "description": "FSM State enumerations (DRC-HDL)"
-            }
-        ],
-        "configurationDefaults": {
-            "editor.tokenColorCustomizations": {
-                "textMateRules": [
-                    {
-                        "scope": "keyword.control.vhdl",
-                        "settings": {
-                            "foreground": "#569CD6"
-                        }
-                    },
-                    {
-                        "scope": "constant.language.vhdl",
-                        "settings": {
-                            "foreground": "#008CFF"
-                        }
-                    },
-                    {
-                        "scope": "entity.other.attribute-name.vhdl",
-                        "settings": {
-                            "foreground": "#CE9178"
-                        }
-                    },
-                    {
-                        "scope": "constant.numeric.vhdl",
-                        "settings": {
-                            "foreground": "#B5CEA8"
-                        }
-                    },
-                    {
-                        "scope": "storage.type.vhdl",
-                        "settings": {
-                            "foreground": "#4EC9B0"
-                        }
-                    }
-                ]
-            },
-            "editor.semanticTokenColorCustomizations": {
-                "rules": {
-                    "portIn": "#c1c2ff",
-                    "portOut": "#ffc1d6",
-                    "functionName": "#DCDCAA",
-                    "vhdlType": "#4EC9B0",
-                    "vhdlVariable": "#9CDCFE",
-                    "vhdlSignal": "#4FC1FF",
-                    "vhdlConstant": "#008CFF",
-                    "fsmState": "#C586C0"
-                }
-            }
-        }
-    },
-    "scripts": {
-        "vscode:prepublish": "npm run compile",
-        "compile": "tsc -p ./",
-        "watch": "tsc -watch -p ./",
-        "pretest": "npm run compile",
-        "test": "vscode-test"
-    },
-    "devDependencies": {
-        "@types/vscode": "^1.90.0",
-        "@types/node": "20.x",
-        "typescript": "^5.4.5"
-    }
+	"name": "drc-hdl-support",
+	"displayName": "DRC-HDL",
+	"description": "Professional VHDL/Verilog support with advanced semantic highlighting",
+	"version": "0.0.3",
+	"publisher": "DennyRub",
+	"engines": {
+		"vscode": "^1.90.0"
+	},
+	"categories": [
+		"Programming Languages",
+		"Themes"
+	],
+	"keywords": [
+		"VHDL",
+		"Verilog",
+		"HDL",
+		"FPGA",
+		"Hardware Description Language"
+	],
+	"activationEvents": [
+		"onLanguage:vhdl"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"languages": [
+			{
+				"id": "vhdl",
+				"aliases": [
+					"VHDL",
+					"vhdl"
+				],
+				"extensions": [
+					".vhd",
+					".vhdl"
+				],
+				"configuration": "./language-configuration-vhdl.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "vhdl",
+				"scopeName": "source.vhdl",
+				"path": "./syntaxes/vhdl.tmLanguage.json"
+			}
+		],
+		"semanticTokenTypes": [
+			{
+				"id": "portIn",
+				"description": "Input port names (DRC-HDL)"
+			},
+			{
+				"id": "portOut",
+				"description": "Output port names (DRC-HDL)"
+			},
+			{
+				"id": "functionName",
+				"description": "VHDL function names (DRC-HDL)"
+			},
+			{
+				"id": "vhdlType",
+				"description": "Data types (DRC-HDL)"
+			},
+			{
+				"id": "vhdlVariable",
+				"description": "Variables (DRC-HDL)"
+			},
+			{
+				"id": "vhdlSignal",
+				"description": "Signals (DRC-HDL)"
+			},
+			{
+				"id": "vhdlConstant",
+				"description": "Constants and system objects (DRC-HDL)"
+			},
+			{
+				"id": "fsmState",
+				"description": "FSM State enumerations (DRC-HDL)"
+			}
+		],
+		"configurationDefaults": {
+			"editor.tokenColorCustomizations": {
+				"textMateRules": [
+					{
+						"scope": "keyword.control.vhdl",
+						"settings": {
+							"foreground": "#569CD6"
+						}
+					},
+					{
+						"scope": "constant.language.vhdl",
+						"settings": {
+							"foreground": "#008CFF"
+						}
+					},
+					{
+						"scope": "entity.other.attribute-name.vhdl",
+						"settings": {
+							"foreground": "#CE9178"
+						}
+					},
+					{
+						"scope": "constant.numeric.vhdl",
+						"settings": {
+							"foreground": "#B5CEA8"
+						}
+					},
+					{
+						"scope": "storage.type.vhdl",
+						"settings": {
+							"foreground": "#4EC9B0"
+						}
+					}
+				]
+			},
+			"editor.semanticTokenColorCustomizations": {
+				"rules": {
+					"portIn": "#c1c2ff",
+					"portOut": "#ffc1d6",
+					"functionName": "#DCDCAA",
+					"vhdlType": "#4EC9B0",
+					"vhdlVariable": "#9CDCFE",
+					"vhdlSignal": "#4FC1FF",
+					"vhdlConstant": "#008CFF",
+					"fsmState": "#C586C0"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile",
+		"test": "vscode-test"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.90.0",
+		"@types/node": "20.x",
+		"typescript": "^5.4.5"
+	}
 }
