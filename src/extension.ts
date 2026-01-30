@@ -86,6 +86,10 @@ export function activate(context: vscode.ExtensionContext) {
                         const wordStart = m.index;
                         const globalOffset = document.offsetAt(new vscode.Position(i, wordStart));
 
+                        // Пропуск numeric констант
+                        const charAfter = lineText[wordStart + word.length];
+                        if ((word === 'x' || word === 'b' || word === 'o') && charAfter === '"') continue;
+
                         // Пропуск комментариев
                         const commentIdx = lineText.indexOf('--');
                         if (commentIdx !== -1 && commentIdx < wordStart) continue;
