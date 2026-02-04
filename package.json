@@ -2,7 +2,7 @@
 	"name": "drc-hdl-support",
 	"displayName": "DRC-HDL",
 	"description": "Professional VHDL/Verilog support with advanced semantic highlighting",
-	"version": "0.0.3",
+	"version": "0.1.0",
 	"publisher": "DennyRub",
 	"engines": {
 		"vscode": "^1.90.0"
