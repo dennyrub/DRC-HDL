@@ -2,7 +2,7 @@
 	"name": "drc-hdl-support",
 	"displayName": "DRC-HDL",
 	"description": "Professional VHDL/Verilog support with advanced semantic highlighting",
-	"version": "0.3.0",
+	"version": "0.4.0",
 	"publisher": "DennyRub",
 	"engines": {
 		"vscode": "^1.90.0"
@@ -40,6 +40,12 @@
 				"language": "vhdl",
 				"scopeName": "source.vhdl",
 				"path": "./syntaxes/vhdl.tmLanguage.json"
+			}
+		],
+		"snippets": [
+			{
+				"language": "vhdl",
+				"path": "./snippets/vhdl-snippets.json"
 			}
 		],
 		"semanticTokenTypes": [

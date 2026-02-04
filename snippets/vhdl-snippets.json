@@ -1,0 +1,198 @@
+{
+	"Entity and Architecture": {
+		"prefix": "ent-arch",
+		"body": [
+			"entity ${1:top_module} is",
+			"\tgeneric (",
+			"\t\t",
+			"\t);",
+			"\tport (",
+			"\t\tCLK : in std_logic;",
+			"\t\tRESET : in std_logic;$2",
+			"\t);",
+			"end entity ${1:top_module};",
+			"",
+			"architecture Behavioral of ${1:top_module} is",
+			"\t-- constants:",
+			"\t",
+			"\t-- signals:",
+			"\t",
+			"begin",
+			"\t$0",
+			"end architecture Behavioral;"
+		],
+		"description": "Create a new entity with its architecture"
+	},
+	"Package and Body": {
+		"prefix": "pkg",
+		"body": [
+			"library ieee;",
+			"use ieee.std_logic_1164.all;",
+			"use ieee.numeric_std.all;",
+			"",
+			"package ${1:my_project}_pkg is",
+			"\t-- Types, constants, and function declarations",
+			"\t$2",
+			"end package ${1:my_project}_pkg;",
+			"",
+			"package body ${1:my_project}_pkg is",
+			"\t-- Function and procedure implementations",
+			"\t$0",
+			"end package body ${1:my_project}_pkg;"
+		],
+		"description": "Full Package and Package Body template"
+	},
+	"Process block": {
+		"prefix": "proc",
+		"body": [
+			"process_${1:label}: process(${2:CLK})",
+			"\t-- variables:",
+			"\t",
+			"\t-- functions:",
+			"\t",
+			"begin",
+			"\tif rising_edge(${2:CLK}) then",
+			"\t\t$0",
+			"\tend if;",
+			"end process process_${1:label};"
+		],
+		"description": "Standard clocked process"
+	},
+	"Function Body": {
+		"prefix": "func-body",
+		"body": [
+			"function ${1:func_name} (${2:signal_in} : ${3:std_logic}) return ${4:std_logic} is",
+			"\tvariable ${5:result} : ${4:std_logic};",
+			"begin",
+			"\t$0",
+			"\treturn ${5:result};",
+			"end function ${1:func_name};"
+		],
+		"description": "Full VHDL function body"
+	},
+	"Procedure Body": {
+		"prefix": "proc-body",
+		"body": [
+			"procedure ${1:proc_name} (${2:signal_in} : in ${3:std_logic}; ${4:signal_out} : out ${3:std_logic}) is",
+			"begin",
+			"\t$0",
+			"end procedure ${1:proc_name};"
+		],
+		"description": "Full VHDL procedure body"
+	},
+	"Function Declaration": {
+		"prefix": "func-dec",
+		"body": "function ${1:func_name} (${2:params}) return ${3:type};",
+		"description": "Function declaration (signature)"
+	},
+	"Procedure Declaration": {
+		"prefix": "proc-dec",
+		"body": "procedure ${1:proc_name} (${2:params});",
+		"description": "Procedure declaration (signature)"
+	},
+	"For Loop": {
+		"prefix": "for",
+		"body": [
+			"for ${1:i} in ${2:0} to ${3:7} loop",
+			"\t$0",
+			"end loop;"
+		],
+		"description": "Standard for loop"
+	},
+	"For Loop Downto": {
+		"prefix": "ford",
+		"body": [
+			"for ${1:i} in ${2:7} downto ${3:0} loop",
+			"\t$0",
+			"end loop;"
+		],
+		"description": "For loop with downto range"
+	},
+	"While Loop": {
+		"prefix": "while",
+		"body": [
+			"while ${1:condition} loop",
+			"\t$0",
+			"end loop;"
+		],
+		"description": "Standard while loop"
+	},
+	"For Generate": {
+		"prefix": "gen",
+		"body": [
+			"${1:gen_label}: for ${2:i} in ${3:0} to ${4:7} generate",
+			"\t$0",
+			"end generate ${1:gen_label};"
+		],
+		"description": "For-Generate block (concurrent)"
+	},
+	"If statement": {
+		"prefix": "if",
+		"body": [
+			"if ${1:condition} then",
+			"\t$0",
+			"end if;"
+		],
+		"description": "Simple IF statement"
+	},
+	"If-Elseif statement": {
+		"prefix": "if-elsif",
+		"body": [
+			"if ${1:condition1} then",
+			"\t$2",
+			"elsif ${3:condition2} then",
+			"\t$4",
+			"else",
+			"\t$0",
+			"end if;"
+		],
+		"description": "IF-ELSIF-ELSE statement"
+	},
+	"Case statement": {
+		"prefix": "case",
+		"body": [
+			"case ${1:signal_name} is",
+			"\twhen ${2:value} =>",
+			"\t\t$3",
+			"\twhen others =>",
+			"\t\t$0",
+			"end case;"
+		],
+		"description": "Standard case statement"
+	},
+	"Increment Variable": {
+		"prefix": "incv",
+		"body": "${1:variable_name} := ${1:variable_name} + 1;",
+		"description": "Increment a variable (:=)"
+	},
+	"Increment Signal": {
+		"prefix": "incs",
+		"body": "${1:signal_name} <= ${1:signal_name} + 1;",
+		"description": "Increment a signal (<=)"
+	},
+	"Decrement Variable": {
+		"prefix": "decv",
+		"body": "${1:variable_name} := ${1:variable_name} - 1;",
+		"description": "Decrement a variable (:=)"
+	},
+	"Decrement Signal": {
+		"prefix": "decs",
+		"body": "${1:signal_name} <= ${1:signal_name} - 1;",
+		"description": "Decrement a signal (<=)"
+	},
+	"Hex Literal": {
+		"prefix": "hex",
+		"body": "x\"${1:00}\"",
+		"description": "Hexadecimal string literal"
+	},
+	"Octal Literal": {
+		"prefix": "oct",
+		"body": "o\"${1:00}\"",
+		"description": "Octal string literal"
+	},
+	"Binary Literal": {
+		"prefix": "bin",
+		"body": "b\"${1:00}\"",
+		"description": "Binary string literal"
+	}
+}
